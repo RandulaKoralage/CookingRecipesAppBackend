@@ -19,12 +19,6 @@ function getByName(req, res, next) {
     };
     console.log(options.uri);
 
-   /* request(options).then(function (body) {
-        res.status(200).send(body)
-            .catch(function (err) {
-               console.log(err);
-            });
-    });*/
     request(options).then(recipe => recipe ? res.json(recipe) : res.sendStatus(404))      
             .catch(err => next(err))             
 }
