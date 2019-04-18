@@ -1,4 +1,4 @@
-# node-mongo-registration-login-api
+# Yummy
 NodeJs + Android + MongoApp
 
 A cooking reciepe application
