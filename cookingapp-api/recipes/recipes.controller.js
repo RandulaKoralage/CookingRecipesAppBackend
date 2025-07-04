@@ -11,7 +11,6 @@ module.exports = router;
 
 
 function getByName(req, res, next) {
-    console.log(req.body.name);
     const options = {
         method: 'GET',
         uri: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + req.body.name,
@@ -27,7 +26,6 @@ function getByName(req, res, next) {
 
 
 function getByIngredients(req, res, next) {
-    //console.log(req.body.name);
     const options = {
         method: 'GET',
         uri: 'https://www.themealdb.com/api/json/v2/1/filter.php?i=' + req.body.ing1 +','+ req.body.ing2 +','+ req.body.ing3 +','+ req.body.ing4,
@@ -35,7 +33,6 @@ function getByIngredients(req, res, next) {
         json: true
 
     };
-    console.log(options.uri);
 
     request(options).then(recipe => recipe ? res.json(recipe) : res.sendStatus(404))      
             .catch(err => next(err))             

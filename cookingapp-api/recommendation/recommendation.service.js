@@ -39,6 +39,5 @@ async function recommondsimiler(param) {
   console.log(param);
   const similarDocuments = recommender.getSimilarDocuments(param, 0, 10);
 
-  // console.log(similarDocuments);
   return similarDocuments;
 }
